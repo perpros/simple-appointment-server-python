@@ -2,7 +2,7 @@ version: '3'
 
 services:
   db:
-    image: mongodb
+    image: bitnami/mongodb
     env_file:
       - .env
   web_app:
