@@ -6,8 +6,9 @@ from .response.cancel_appointment_response_model import CancelAppointmentRespons
 
 
 class CancelAppointmentModel:
-    appointment = AppointmentEntity
-    repository = IAppointmentRepository
+    def __init__(self, appointment: AppointmentEntity, repository: IAppointmentRepository):
+        self.appointment = appointment
+        self.repository = repository
 
     def cancelAppointment(self) -> CancelAppointmentResponseModel:
         return self.repository.cancelAppointment(self.appointment)
